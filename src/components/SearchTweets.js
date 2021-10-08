@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import searchPicture from './images/search-picture.jpg';
+import Tweet from './Tweet';
 import searchPicturePng from './images/search-picture.png';
 
 class SearchTweets extends Component {
@@ -19,6 +19,7 @@ class SearchTweets extends Component {
 						Search By Subject
 					</button>
 				</form>
+				<Tweet tweets={this.props.tweets} />
 			</div>
 		);
 	}
