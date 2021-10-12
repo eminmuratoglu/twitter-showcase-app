@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './NavBar';
 import Routes from './Routes';
 import './App.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 class App extends Component {
 	state = {
