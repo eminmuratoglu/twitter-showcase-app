@@ -29,21 +29,6 @@ class App extends Component {
 		console.log(res.data);
 	};
 
-	// componentDidMount() {
-	// 	this.getTweetData();
-	// }
-
-	// getTweetData = async () => {
-	// 	const res = await axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=nasa`, {
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 			Accept: 'application/json',
-	// 			Authorization:
-	// 				'Bearer AAAAAAAAAAAAAAAAAAAAAN1IUgEAAAAADc22jrWVselAQRqU%2F3s3uQEx0QY%3DqE1GpMVdzRjuS51bvhLMqJfBZKXEGZqupG2lD250hDM8eR3KHn'
-	// 		}
-	// 	});
-	// 	this.setState({ api_data: res });
-	// };
 	render() {
 		return (
 			<div className="App">
@@ -97,4 +82,20 @@ export default App;
 // 			retweets: 9
 // 		}
 // 	]
+// };
+
+// componentDidMount() {
+// 	this.getTweetData();
+// }
+
+// getTweetData = async () => {
+// 	const res = await axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=nasa`, {
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 			Accept: 'application/json',
+// 			Authorization:
+// 				'Bearer AAAAAAAAAAAAAAAAAAAAAN1IUgEAAAAADc22jrWVselAQRqU%2F3s3uQEx0QY%3DqE1GpMVdzRjuS51bvhLMqJfBZKXEGZqupG2lD250hDM8eR3KHn'
+// 		}
+// 	});
+// 	this.setState({ api_data: res });
 // };
