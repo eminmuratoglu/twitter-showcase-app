@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const fetch = require('node-fetch');
 const axios = require('axios');
 
 const port = 3000;
