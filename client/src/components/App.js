@@ -40,7 +40,7 @@ class App extends Component {
 			<div className="App">
 				<NavBar />
 				<div className="content__container">
-					<h1 className="display-3">Twiter Showcase App</h1>
+					<h1 className="display-3">Twitter Showcase App</h1>
 					<Routes tweets={this.state.tweets} />
 				</div>
 			</div>
