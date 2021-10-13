@@ -1,12 +1,19 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const fetch = require('node-fetch');
+const axios = require('axios');
+
 const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/tweets', (req, res) => {
-	res.send(tweets);
+app.get('/api/tweets', async (req, res) => {
+	// res.send(tweets);
+	const resp = await axios.get('https://swapi.co/api/people/1');
+	res.send(resp.data);
+
+	// await fetch('https://swapi.co/api/people/1').then((response) => response.json()).then((data) => res.send(data));
 });
 
 app.listen(port);
