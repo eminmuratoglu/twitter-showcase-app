@@ -20,6 +20,15 @@ class App extends Component {
 		api_data: ''
 	};
 
+	componentDidMount() {
+		this.getData();
+	}
+
+	getData = async () => {
+		const res = await axios.get('/api/tweets');
+		console.log(res.data);
+	};
+
 	// componentDidMount() {
 	// 	this.getTweetData();
 	// }
