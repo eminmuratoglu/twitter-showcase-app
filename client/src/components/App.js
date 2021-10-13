@@ -88,6 +88,7 @@ export default App;
 // 	this.getTweetData();
 // }
 
+// will use in server, not here
 // getTweetData = async () => {
 // 	const res = await axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=nasa`, {
 // 		headers: {
