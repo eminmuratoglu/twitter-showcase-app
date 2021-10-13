@@ -7,12 +7,15 @@ const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/tweets', async (req, res) => {
+app.get('/api/tweets', (req, res) => {
 	// res.send(tweets);
-	const resp = await axios.get('https://swapi.co/api/people/1');
-	res.send(resp.data);
 
-	// await fetch('https://swapi.co/api/people/1').then((response) => response.json()).then((data) => res.send(data));
+	// axios.get('https://swapi.co/api/people/1').then((response) => res.send(response.data));
+
+	axios.get('https://swapi.co/api/people/1').then((res) => {
+		const response = res.data;
+		console.log(response);
+	});
 });
 
 app.listen(port);
