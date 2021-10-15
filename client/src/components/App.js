@@ -10,11 +10,8 @@ class App extends Component {
 		searchQuery: ''
 	};
 
-	async componentDidMount() {
+	componentDidMount() {
 		this.getData();
-		// await axios.post('/', {
-		// 	query: this.state.searchQuery
-		// });
 	}
 
 	getData = async () => {

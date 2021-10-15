@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tweet from './Tweet';
+import axios from 'axios';
 import searchPicturePng from './images/search-picture.png';
 
 class SearchTweets extends Component {
@@ -16,7 +17,15 @@ class SearchTweets extends Component {
 			}
 		);
 	};
-	handleSearchByContentSubmit = () => {};
+	handleSearchByContentClick = (e) => {
+		e.preventDefault();
+		axios
+			.post('/api/tweets', this.state.searchQuery)
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => console.log(err));
+	};
 	render() {
 		return (
 			<div className="searchtweet__container">
@@ -35,7 +44,12 @@ class SearchTweets extends Component {
 					<button className="btn btn-primary my-2 my-sm-0" type="button" style={{ whiteSpace: 'nowrap' }}>
 						Search By User
 					</button>
-					<button className="btn btn-primary my-2 my-sm-0" type="button" style={{ whiteSpace: 'nowrap' }}>
+					<button
+						className="btn btn-primary my-2 my-sm-0"
+						type="button"
+						onClick={this.handleSearchByContentClick}
+						style={{ whiteSpace: 'nowrap' }}
+					>
 						Search By Subject
 					</button>
 				</form>
