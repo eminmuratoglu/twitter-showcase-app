@@ -1,26 +1,35 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+require('dotenv').config();
 const axios = require('axios');
+const bodyParser = require('body-parser');
 
 const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, 'client/build')));
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 app.post('/api/query', (req, res) => {
-	console.log(req.query);
+	res.send(req.body);
 });
 
 app.get('/api/tweets', async (req, res) => {
-	const resp = await axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=chess&result_type=popular`, {
+	// let query = (await axios.get('api/query')).searchQuery;
+	const resp = await axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=bowling&result_type=popular`, {
 		headers: {
 			'Content-Type': 'application/json',
 			Accept: 'application/json',
-			Authorization:
-				'Bearer AAAAAAAAAAAAAAAAAAAAAN1IUgEAAAAADc22jrWVselAQRqU%2F3s3uQEx0QY%3DqE1GpMVdzRjuS51bvhLMqJfBZKXEGZqupG2lD250hDM8eR3KHn'
+			Authorization: process.env.TWITTER_AUTH_BEARER_TOKEN
 		}
 	});
 	const tweets = resp.data.statuses;
+
 	res.send(tweets);
 });
 
@@ -28,8 +37,3 @@ app.get('/api/tweets', async (req, res) => {
 // https://api.twitter.com/1.1/users/search.json?q=soccer
 
 app.listen(port);
-
-// in server, make a request to twitter to retrieve data
-// in react, make a request to your server to get tweet data which already received from twitter.
-
-// question 1: localhost:3000/api/tweets renders the api to the page naturally. Is this supposed be like this?
