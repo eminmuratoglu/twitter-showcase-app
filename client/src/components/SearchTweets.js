@@ -20,9 +20,9 @@ class SearchTweets extends Component {
 	handleSearchByContentClick = (e) => {
 		e.preventDefault();
 		axios
-			.post('/api/query', this.state.searchQuery)
+			.post('/api/query', this.state)
 			.then((res) => {
-				console.log(res);
+				console.log(res.data);
 			})
 			.catch((err) => console.log(err));
 	};
