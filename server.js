@@ -7,6 +7,10 @@ const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, 'client/build')));
 
+app.post('/api/query', (req, res) => {
+	console.log(req.query);
+});
+
 app.get('/api/tweets', async (req, res) => {
 	const resp = await axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=chess&result_type=popular`, {
 		headers: {
