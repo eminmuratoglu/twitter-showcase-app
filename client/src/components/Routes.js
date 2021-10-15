@@ -6,7 +6,11 @@ import RandomTweets from './RandomTweets';
 function Routes(props) {
 	return (
 		<Switch>
-			<Route exact path="/searchtweets" render={() => <SearchTweets tweets={props.tweets} />} />
+			<Route
+				exact
+				path="/searchtweets"
+				render={() => <SearchTweets tweets={props.tweets} query={props.query} getSearchQuery={props.getSearchQuery} />}
+			/>
 			<Route exact path="/randomtweets" render={() => <RandomTweets />} />
 		</Switch>
 	);

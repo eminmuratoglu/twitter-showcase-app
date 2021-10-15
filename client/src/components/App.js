@@ -7,21 +7,14 @@ import axios from 'axios';
 class App extends Component {
 	state = {
 		tweets: [],
-		mockTweet: [
-			{
-				username: 'Emin Muratoglu',
-				text:
-					'Ssumenda quia animi mollitia laboriosam non ea eveniet ducimus repellat totam dignissimos corporis alias, veniam sapiente dolor eius maiores veritatis hic beatae. ',
-				date: '10-05-20',
-				avatar_src: '',
-				likes: 15,
-				retweets: 8
-			}
-		]
+		searchQuery: ''
 	};
 
-	componentDidMount() {
+	async componentDidMount() {
 		this.getData();
+		// await axios.post('/', {
+		// 	query: this.state.searchQuery
+		// });
 	}
 
 	getData = async () => {
@@ -31,7 +24,10 @@ class App extends Component {
 			tweetsArr.push(twt);
 		});
 		this.setState({ tweets: tweetsArr });
-		console.log(this.state.tweets);
+	};
+
+	getSearchQuery = (searchText) => {
+		this.setState({ searchQuery: searchText });
 	};
 
 	render() {
@@ -40,7 +36,7 @@ class App extends Component {
 				<NavBar />
 				<div className="content__container">
 					<h1 className="display-3">Twitter Showcase App</h1>
-					<Routes tweets={this.state.tweets} />
+					<Routes tweets={this.state.tweets} query={this.state.searchQuery} getSearchQuery={this.getSearchQuery} />
 				</div>
 			</div>
 		);

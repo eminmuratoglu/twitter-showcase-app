@@ -3,6 +3,20 @@ import Tweet from './Tweet';
 import searchPicturePng from './images/search-picture.png';
 
 class SearchTweets extends Component {
+	state = {
+		searchQuery: ''
+	};
+	handleChange = (e) => {
+		this.setState(
+			{
+				searchQuery: e.target.value
+			},
+			() => {
+				this.props.getSearchQuery(this.state.searchQuery);
+			}
+		);
+	};
+	handleSearchByContentSubmit = () => {};
 	render() {
 		return (
 			<div className="searchtweet__container">
@@ -11,7 +25,13 @@ class SearchTweets extends Component {
 					<h4>Search for tweets either by a user or a topic!</h4>
 				</div>
 				<form className="form-group d-flex gap-1 my-lg-5 my-sm-1">
-					<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+					<input
+						className="form-control mr-sm-2"
+						type="search"
+						placeholder="Search"
+						aria-label="Search"
+						onChange={this.handleChange}
+					/>
 					<button className="btn btn-primary my-2 my-sm-0" type="button" style={{ whiteSpace: 'nowrap' }}>
 						Search By User
 					</button>
@@ -24,5 +44,4 @@ class SearchTweets extends Component {
 		);
 	}
 }
-
 export default SearchTweets;
