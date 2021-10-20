@@ -7,33 +7,25 @@ import axios from 'axios';
 class App extends Component {
 	state = {
 		tweets: [],
-		searchQuery: '',
-		searchType: ''
+		searchQuery: ''
 	};
 
-	// works perfect. I need to render user search result differently!
-
-	getTweet = (type) => {
-		this.setState({ searchType: type }, async () => {
-			const resp = await axios.get('/api/tweets', {
-				params: {
-					searchQuery: this.state.searchQuery,
-					searchType: this.state.searchType
-				}
-			});
-			const tweetResults = resp.data;
-			console.log(tweetResults);
-			this.setState({ tweets: tweetResults });
+	getTweet = async (type) => {
+		const resp = await axios.get('/api/tweets', {
+			params: {
+				searchQuery: this.state.searchQuery,
+				searchType: type
+			}
 		});
-		console.log('state:', this.state.tweets);
+		const tweetResults = resp.data;
+		console.log(tweetResults);
+		this.setState({ tweets: tweetResults });
+		console.log('state-inside:', this.state.tweets);
 	};
 
 	getSearchQuery = (inputText) => {
 		this.setState({ searchQuery: inputText });
 	};
-	// getSearchType = (type) => {
-	// 	this.setState({ searchType: type });
-	// };
 
 	render() {
 		return (
@@ -41,12 +33,7 @@ class App extends Component {
 				<NavBar />
 				<div className="content__container">
 					<h1 className="display-3">Twitter Showcase App</h1>
-					<Routes
-						tweets={this.state.tweets}
-						getTweet={this.getTweet}
-						getSearchQuery={this.getSearchQuery}
-						// getSearchType={this.getSearchType}
-					/>
+					<Routes tweets={this.state.tweets} getTweet={this.getTweet} getSearchQuery={this.getSearchQuery} />
 				</div>
 			</div>
 		);

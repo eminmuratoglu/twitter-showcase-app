@@ -5,7 +5,7 @@ import TweetUser from './TweetUser';
 
 class SearchTweets extends Component {
 	state = {
-		tweets: [],
+		// tweets: [],
 		searchQuery: '',
 		searchType: ''
 	};
@@ -20,11 +20,11 @@ class SearchTweets extends Component {
 	};
 	handleSearchByUser = (e) => {
 		e.preventDefault();
-		this.setState({ searchType: 'user' }, () => this.handleSearchClick());
+		this.setState({ searchType: 'user' }, this.handleSearchClick);
 	};
 	handleSearchByContent = (e) => {
 		e.preventDefault();
-		this.setState({ searchType: 'content' }, () => this.handleSearchClick());
+		this.setState({ searchType: 'content' }, this.handleSearchClick);
 	};
 	render() {
 		return (

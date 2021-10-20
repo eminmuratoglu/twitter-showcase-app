@@ -23,7 +23,7 @@ app.get('/api/tweets', async (req, res) => {
 	} else if (searchType === 'user') {
 		url = `https://api.twitter.com/1.1/users/search.json?q=${searchQuery}`;
 	}
-	console.log(searchQuery, searchType);
+	console.log('query:', searchQuery, '| type:', searchType);
 	const response = await axios.get(url, {
 		headers: {
 			'Content-Type': 'application/json',
