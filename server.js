@@ -3,17 +3,17 @@ const path = require('path');
 require('dotenv').config();
 const app = express();
 const axios = require('axios');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser'); // to be deleted
 
 const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, 'client/build')));
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+// // parse application/x-www-form-urlencoded
+// app.use(bodyParser.urlencoded({ extended: false }));
 
-// parse application/json
-app.use(bodyParser.json());
+// // parse application/json
+// app.use(bodyParser.json());
 
 app.get('/api/tweets', async (req, res) => {
 	let { searchQuery, searchType } = req.query;
