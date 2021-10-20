@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
 import Tweet from './Tweet';
-import axios from 'axios';
 import searchPicturePng from './images/search-picture.png';
+import TweetUser from './TweetUser';
 
 class SearchTweets extends Component {
 	state = {
-		searchQuery: ''
+		tweets: [],
+		searchQuery: '',
+		searchType: ''
 	};
 	handleChange = (e) => {
-		this.setState(
-			{
-				searchQuery: e.target.value
-			},
-			() => {
-				this.props.getSearchQuery(this.state.searchQuery);
-			}
-		);
+		this.setState({ searchQuery: e.target.value }, () => {
+			this.props.getSearchQuery(this.state.searchQuery);
+		});
 	};
-	handleSearchByContentClick = (e) => {
+	handleSearchClick = () => {
+		this.props.getTweet(this.state.searchType);
+		this.setState({ searchQuery: '' });
+	};
+	handleSearchByUser = (e) => {
 		e.preventDefault();
-		axios
-			.post('/api/query', this.state)
-			.then((res) => {
-				console.log(res.data);
-			})
-			.catch((err) => console.log(err));
+		this.setState({ searchType: 'user' }, () => this.handleSearchClick());
+	};
+	handleSearchByContent = (e) => {
+		e.preventDefault();
+		this.setState({ searchType: 'content' }, () => this.handleSearchClick());
 	};
 	render() {
 		return (
@@ -39,21 +39,35 @@ class SearchTweets extends Component {
 						type="search"
 						placeholder="Search"
 						aria-label="Search"
+						value={this.state.searchQuery}
 						onChange={this.handleChange}
 					/>
-					<button className="btn btn-primary my-2 my-sm-0" type="button" style={{ whiteSpace: 'nowrap' }}>
+					<button
+						className="btn btn-primary my-2 my-sm-0"
+						type="button"
+						onClick={this.handleSearchByUser}
+						style={{ whiteSpace: 'nowrap' }}
+					>
 						Search By User
 					</button>
 					<button
 						className="btn btn-primary my-2 my-sm-0"
 						type="button"
-						onClick={this.handleSearchByContentClick}
+						onClick={this.handleSearchByContent}
 						style={{ whiteSpace: 'nowrap' }}
 					>
 						Search By Subject
 					</button>
 				</form>
-				<Tweet tweets={this.props.tweets} />
+				{this.state.searchType === 'content' ? (
+					<Tweet tweets={this.props.tweets} searchType={this.state.searchType} />
+				) : this.state.searchType === 'user' ? (
+					<TweetUser />
+				) : (
+					<div />
+				)}
+
+				{/* <Tweet tweets={this.props.tweets} searchType={this.state.searchType} /> */}
 			</div>
 		);
 	}

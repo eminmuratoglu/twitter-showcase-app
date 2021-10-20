@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const app = express();
 require('dotenv').config();
+const app = express();
 const axios = require('axios');
 const bodyParser = require('body-parser');
 
@@ -15,24 +15,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.post('/api/query', (req, res) => {
-	res.send(req.body);
-});
-
 app.get('/api/tweets', async (req, res) => {
-	// let query = (await axios.get('api/query')).searchQuery;
-	const resp = await axios.get(`https://api.twitter.com/1.1/search/tweets.json?q=bowling&result_type=popular`, {
+	let { searchQuery, searchType } = req.query;
+	let url;
+	if (searchType === 'content') {
+		url = `https://api.twitter.com/1.1/search/tweets.json?q=${searchQuery}&result_type=popular&lang=en`;
+	} else if (searchType === 'user') {
+		url = `https://api.twitter.com/1.1/users/search.json?q=${searchQuery}`;
+	}
+	console.log(searchQuery, searchType);
+	const response = await axios.get(url, {
 		headers: {
 			'Content-Type': 'application/json',
 			Accept: 'application/json',
 			Authorization: process.env.TWITTER_AUTH_BEARER_TOKEN
 		}
 	});
-	const tweets = resp.data.statuses;
-
+	let tweets;
+	if (searchType === 'content') tweets = response.data.statuses;
+	if (searchType === 'user') tweets = response.data;
 	res.send(tweets);
 });
-
 // search by user
 // https://api.twitter.com/1.1/users/search.json?q=soccer
 

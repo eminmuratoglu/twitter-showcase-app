@@ -18,10 +18,13 @@
 	gap: 0.5rem;
 }
 .tweet__avatar {
-	width: 2.5rem;
+	border-radius: 50%;
 }
 .tweet__username {
 	margin: 0;
+}
+.tweet__username.screen-name {
+	opacity: 0.5;
 }
 .tweet__text {
 	margin: 0.7rem;
@@ -41,7 +44,7 @@
 }
 .tweet__stats-retweet {
 	display: flex;
-	gap: 0.2rem;
+	gap: 0.25rem;
 	align-items: center;
 }
 .tweet__stats-retweet img {

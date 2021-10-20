@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Tweet.css';
 import retweetIcon from './images/retweet.png';
-// import avatar from './images/avatar.png';
 
 class Tweet extends Component {
 	formatDate = (date) => {
@@ -9,6 +8,8 @@ class Tweet extends Component {
 	};
 
 	render() {
+		// set condition here to structure differently based on search type
+		// when you make search by content "after" search by user, are you updating tweets?
 		return (
 			<div>
 				{this.props.tweets.map((tw) => {
@@ -16,7 +17,11 @@ class Tweet extends Component {
 						<div className="tweet__container" key={tw.id}>
 							<div className="tweet__header">
 								<img className="tweet__avatar" src={tw.user.profile_image_url} alt="avatar" />
-								<p className="tweet__username">{tw.user.name}</p>
+								<div>
+									<p className="tweet__username">
+										{tw.user.name} <span className="tweet__username screen-name">@{tw.user.screen_name}</span>
+									</p>
+								</div>
 							</div>
 							<p className="tweet__text">{tw.text}</p>
 							<div className="tweet__stats">

@@ -9,7 +9,14 @@ function Routes(props) {
 			<Route
 				exact
 				path="/searchtweets"
-				render={() => <SearchTweets tweets={props.tweets} query={props.query} getSearchQuery={props.getSearchQuery} />}
+				render={() => (
+					<SearchTweets
+						tweets={props.tweets}
+						getTweet={props.getTweet}
+						getSearchQuery={props.getSearchQuery}
+						// getSearchType={props.getSearchType}
+					/>
+				)}
 			/>
 			<Route exact path="/randomtweets" render={() => <RandomTweets />} />
 		</Switch>
