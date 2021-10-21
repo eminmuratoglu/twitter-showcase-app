@@ -11,10 +11,11 @@ function Routes(props) {
 				path="/searchtweets"
 				render={() => (
 					<SearchTweets
-						tweets={props.tweets}
-						getTweet={props.getTweet}
-						getSearchQuery={props.getSearchQuery}
-						// getSearchType={props.getSearchType}
+					// tweets={props.tweets}
+					// getSearchQuery={props.getSearchQuery}
+					// getTweetsByContent={props.getTweetsByContent}
+					// getTweetsByUser={props.getTweetsByUser}
+					// searchType={props.searchType}
 					/>
 				)}
 			/>

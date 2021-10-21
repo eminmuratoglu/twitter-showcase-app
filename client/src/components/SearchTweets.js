@@ -1,37 +1,55 @@
 import React, { Component } from 'react';
-import Tweet from './Tweet';
+import axios from 'axios';
 import searchPicturePng from './images/search-picture.png';
-import TweetUser from './TweetUser';
+import TweetByContent from './TweetByContent';
+import TweetByUser from './TweetByUser';
 
 class SearchTweets extends Component {
 	state = {
-		// tweets: [],
+		tweets: [],
 		searchQuery: '',
 		searchType: ''
 	};
-	handleChange = (e) => {
-		this.setState({ searchQuery: e.target.value }, () => {
-			this.props.getSearchQuery(this.state.searchQuery);
-		});
-	};
+
+	// handleChange = (e) => {
+	// 	this.setState({ searchQuery: e.target.value }, () => {
+	// 		this.props.getSearchQuery(this.state.searchQuery);
+	// 	});
+	// };
 	handleSearchClick = () => {
-		this.props.getTweet(this.state.searchType);
+		this.getTweet();
 		this.setState({ searchQuery: '' });
 	};
-	handleSearchByUser = (e) => {
-		e.preventDefault();
-		this.setState({ searchType: 'user' }, this.handleSearchClick);
-	};
+
 	handleSearchByContent = (e) => {
 		e.preventDefault();
 		this.setState({ searchType: 'content' }, this.handleSearchClick);
 	};
+
+	handleSearchByUser = (e) => {
+		e.preventDefault();
+		this.setState({ searchType: 'user' }, this.handleSearchClick);
+	};
+
+	getTweet = async () => {
+		const { searchQuery, searchType } = this.state;
+		const response = await axios.get(`api/tweets/${searchType}?searhQuery=${searchQuery}`);
+		this.setState({ tweets: response.data });
+	};
+
 	render() {
+		let renderResult = this.state.tweets.map((tw) => {
+			if (this.state.searchType == 'content') {
+				return <TweetByContent key={tw.id} tweets={tw} />;
+			} else if (this.state.searchType == 'user') {
+				return <TweetByUser key={tw.id} tweets={tw} />;
+			}
+		});
 		return (
 			<div className="searchtweet__container">
 				<div className="d-flex justify-content-center align-items-center my-5">
 					<img src={searchPicturePng} className="search__icon" style={{ width: '8rem' }} alt="search" />
-					<h4>Search for tweets either by a user or a topic!</h4>
+					<h4>Search for tweets either by a user or by tweet content!</h4>
 				</div>
 				<form className="form-group d-flex gap-1 my-lg-5 my-sm-1">
 					<input
@@ -40,7 +58,7 @@ class SearchTweets extends Component {
 						placeholder="Search"
 						aria-label="Search"
 						value={this.state.searchQuery}
-						onChange={this.handleChange}
+						onChange={(e) => this.setState({ searchQuery: e.target.value })}
 					/>
 					<button
 						className="btn btn-primary my-2 my-sm-0"
@@ -56,18 +74,18 @@ class SearchTweets extends Component {
 						onClick={this.handleSearchByContent}
 						style={{ whiteSpace: 'nowrap' }}
 					>
-						Search By Subject
+						Search By Content
 					</button>
 				</form>
-				{this.state.searchType === 'content' ? (
-					<Tweet tweets={this.props.tweets} searchType={this.state.searchType} />
-				) : this.state.searchType === 'user' ? (
-					<TweetUser />
-				) : (
-					<div />
-				)}
-
-				{/* <Tweet tweets={this.props.tweets} searchType={this.state.searchType} /> */}
+				{/* {this.state.searchType === 'content' ? 'content' : this.state.searchType === 'user' ? 'user' : <div />} */}
+				{/* {this.state.tweets.map((tw) => {
+					return this.state.searchType === 'content' ? (
+						<TweetByContent key={tw.id} tweets={tw} />
+					) : this.state.searchType === 'user' ? (
+						<TweetByUser key={tw.id} tweets={tw} />
+					) : null;
+				})} */}
+				{renderResult}
 			</div>
 		);
 	}
