@@ -1,49 +1,52 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import searchPicturePng from './images/search-picture.png';
 import TweetByContent from './TweetByContent';
 import TweetByUser from './TweetByUser';
 
 class SearchTweets extends Component {
 	state = {
-		tweets: [],
-		searchQuery: '',
-		searchType: ''
+		searchQuery: ''
 	};
 
-	// handleChange = (e) => {
-	// 	this.setState({ searchQuery: e.target.value }, () => {
-	// 		this.props.getSearchQuery(this.state.searchQuery);
-	// 	});
-	// };
-	handleSearchClick = () => {
-		this.getTweet();
-		this.setState({ searchQuery: '' });
+	handleChange = (e) => {
+		this.setState({ searchQuery: e.target.value }, () => {
+			this.props.getSearchQuery(this.state.searchQuery);
+		});
 	};
 
 	handleSearchByContent = (e) => {
 		e.preventDefault();
-		this.setState({ searchType: 'content' }, this.handleSearchClick);
+		this.props.getTweetsByContent();
 	};
 
 	handleSearchByUser = (e) => {
 		e.preventDefault();
-		this.setState({ searchType: 'user' }, this.handleSearchClick);
-	};
-
-	getTweet = async () => {
-		const { searchQuery, searchType } = this.state;
-		const response = await axios.get(`api/tweets/${searchType}?searhQuery=${searchQuery}`);
-		this.setState({ tweets: response.data });
+		this.props.getTweetsByUser();
 	};
 
 	render() {
-		let renderResult = this.state.tweets.map((tw) => {
-			if (this.state.searchType == 'content') {
-				return <TweetByContent key={tw.id} tweets={tw} />;
-			} else if (this.state.searchType == 'user') {
-				return <TweetByUser key={tw.id} tweets={tw} />;
-			}
+		// let renderTweetsByUser, renderTweetsByContent;
+		// const notFoundMsg = <h5>Search result not found! Please try another!</h5>;
+		// if (this.props.tweetsByUser.length > 0) {
+		// 	renderTweetsByUser = this.props.tweetsByUser.map((tw) => {
+		// 		return <TweetByUser key={tw.id} tweets={tw} />;
+		// 	});
+		// } else {
+		// 	renderTweetsByUser = notFoundMsg;
+		// }
+		// if (this.props.tweetsByContent.length > 0) {
+		// 	renderTweetsByContent = this.props.tweetsByContent.map((tw) => {
+		// 		return <TweetByContent key={tw.id} tweets={tw} />;
+		// 	});
+		// } else {
+		// 	renderTweetsByContent = notFoundMsg;
+		// }
+
+		let renderTweetsByUser = this.props.tweetsByUser.map((tw) => {
+			return <TweetByUser key={tw.id} tweets={tw} />;
+		});
+		let renderTweetsByContent = this.props.tweetsByContent.map((tw) => {
+			return <TweetByContent key={tw.id} tweets={tw} />;
 		});
 		return (
 			<div className="searchtweet__container">
@@ -57,8 +60,7 @@ class SearchTweets extends Component {
 						type="search"
 						placeholder="Search"
 						aria-label="Search"
-						value={this.state.searchQuery}
-						onChange={(e) => this.setState({ searchQuery: e.target.value })}
+						onChange={this.handleChange}
 					/>
 					<button
 						className="btn btn-primary my-2 my-sm-0"
@@ -77,15 +79,8 @@ class SearchTweets extends Component {
 						Search By Content
 					</button>
 				</form>
-				{/* {this.state.searchType === 'content' ? 'content' : this.state.searchType === 'user' ? 'user' : <div />} */}
-				{/* {this.state.tweets.map((tw) => {
-					return this.state.searchType === 'content' ? (
-						<TweetByContent key={tw.id} tweets={tw} />
-					) : this.state.searchType === 'user' ? (
-						<TweetByUser key={tw.id} tweets={tw} />
-					) : null;
-				})} */}
-				{renderResult}
+				{renderTweetsByContent}
+				{renderTweetsByUser}
 			</div>
 		);
 	}

@@ -1,7 +1,12 @@
 import React from 'react';
+import './Tweet.css';
 import retweetIcon from './images/retweet.png';
 
 function TweetUser(props) {
+	const formatDate = (date) => {
+		return `${date.split(' ').slice(1, 3).join(' ')} ${date.slice(-4)}`;
+	};
+
 	const { tweets: tw } = props;
 	return (
 		<div>
@@ -22,8 +27,7 @@ function TweetUser(props) {
 						<span> {tw.status.retweet_count}</span>
 					</div>
 				</div>
-				<p className="tweet__date">date here</p>
-				{/* <p className="tweet__date">{this.formatDate(tw.status.created_at)}</p> */}
+				<p className="tweet__date">{formatDate(tw.status.created_at)}</p>
 			</div>
 		</div>
 	);
