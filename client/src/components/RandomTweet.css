@@ -1,0 +1,24 @@
+.images-container {
+	margin: 2rem 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+	gap: 1rem;
+	justify-content: center;
+	justify-items: center;
+	align-items: end;
+}
+
+.images-container img {
+	width: 8rem;
+}
+.images-container img:hover {
+	opacity: 0.7;
+}
+
+.images-container > *:hover {
+	cursor: pointer;
+}
+
+.images-container .chess-pic {
+	width: 5rem;
+}
