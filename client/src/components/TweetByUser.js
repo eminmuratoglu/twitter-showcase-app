@@ -2,7 +2,7 @@ import React from 'react';
 import './Tweet.css';
 import retweetIcon from './images/retweet.png';
 
-function TweetUser(props) {
+function TweetByUser(props) {
 	const formatDate = (date) => {
 		return `${date.split(' ').slice(1, 3).join(' ')} ${date.slice(-4)}`;
 	};
@@ -33,4 +33,4 @@ function TweetUser(props) {
 	);
 }
 
-export default TweetUser;
+export default TweetByUser;

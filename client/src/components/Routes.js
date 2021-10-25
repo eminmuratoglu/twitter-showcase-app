@@ -19,7 +19,11 @@ function Routes(props) {
 					/>
 				)}
 			/>
-			<Route exact path="/randomtweets" render={() => <RandomTweets />} />
+			<Route
+				exact
+				path="/randomtweets"
+				render={() => <RandomTweets getTweetsByUser={props.getTweetsByUser} tweetsByUser={props.tweetsByUser} />}
+			/>
 		</Switch>
 	);
 }

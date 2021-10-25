@@ -16,12 +16,12 @@ class SearchTweets extends Component {
 
 	handleSearchByContent = (e) => {
 		e.preventDefault();
-		this.props.getTweetsByContent();
+		this.props.getTweetsByContent(`api/tweets/content/?searchQuery=${this.state.searchQuery}`);
 	};
 
 	handleSearchByUser = (e) => {
 		e.preventDefault();
-		this.props.getTweetsByUser();
+		this.props.getTweetsByUser(`api/tweets/user/?searchQuery=${this.state.searchQuery}`);
 	};
 
 	render() {
