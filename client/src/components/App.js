@@ -7,23 +7,23 @@ import axios from 'axios';
 class App extends Component {
 	state = {
 		tweetsByContent: [],
-		tweetsByUser: [],
-		searchQuery: ''
+		tweetsByUser: []
+		// searchQuery: ''
 	};
 
-	getTweetsByContent = async () => {
-		const response = await axios.get(`api/tweets/content/?searchQuery=${this.state.searchQuery}`);
+	getTweetsByContent = async (url) => {
+		const response = await axios.get(url);
 		this.setState({ tweetsByContent: response.data, tweetsByUser: [] });
 	};
 
-	getTweetsByUser = async () => {
-		const response = await axios.get(`api/tweets/user/?searchQuery=${this.state.searchQuery}`);
+	getTweetsByUser = async (url) => {
+		const response = await axios.get(url);
 		this.setState({ tweetsByUser: response.data, tweetsByContent: [] });
 	};
 
-	getSearchQuery = (inputText) => {
-		this.setState({ searchQuery: inputText });
-	};
+	// getSearchQuery = (inputText) => {
+	// 	this.setState({ searchQuery: inputText });
+	// };
 
 	render() {
 		return (
