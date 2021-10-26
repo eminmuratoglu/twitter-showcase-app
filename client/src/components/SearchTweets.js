@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SearchTweet.css';
 import searchPicturePng from './images/search-picture.png';
 import TweetByContent from './TweetByContent';
 import TweetByUser from './TweetByUser';
@@ -10,7 +11,7 @@ class SearchTweets extends Component {
 
 	handleChange = (e) => {
 		this.setState({ searchQuery: e.target.value }, () => {
-			this.props.getSearchQuery(this.state.searchQuery);
+			// this.props.getSearchQuery(this.state.searchQuery);
 		});
 	};
 
@@ -50,9 +51,12 @@ class SearchTweets extends Component {
 		});
 		return (
 			<div className="searchtweet__container">
-				<div className="d-flex justify-content-center align-items-center my-5">
-					<img src={searchPicturePng} className="search__icon" style={{ width: '8rem' }} alt="search" />
-					<h4>Search for tweets either by a user or by tweet content!</h4>
+				<div className="searchTweet__header">
+					<img src={searchPicturePng} className="search__icon" alt="search" />
+					<div>
+						<h4>Search for tweets either by a user or by tweet content!</h4>
+						<h4>And hunt down a number of tweets related to the search!</h4>
+					</div>
 				</div>
 				<form className="form-group d-flex gap-1 my-lg-5 my-sm-1">
 					<input
@@ -64,7 +68,7 @@ class SearchTweets extends Component {
 					/>
 					<button
 						className="btn btn-primary my-2 my-sm-0"
-						type="button"
+						type="submit"
 						onClick={this.handleSearchByUser}
 						style={{ whiteSpace: 'nowrap' }}
 					>
@@ -72,7 +76,7 @@ class SearchTweets extends Component {
 					</button>
 					<button
 						className="btn btn-primary my-2 my-sm-0"
-						type="button"
+						type="submit"
 						onClick={this.handleSearchByContent}
 						style={{ whiteSpace: 'nowrap' }}
 					>
