@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './Tweet.css';
 import retweetIcon from './images/retweet.png';
+import { getMediaEl, formatDate } from './helpers';
 
 function TweetByContent(props) {
-	const formatDate = (date) => {
-		return `${date.split(' ').slice(1, 3).join(' ')} ${date.slice(-4)}`;
-	};
-
 	const { tweets: tw } = props;
 	return (
 		<div>
@@ -19,7 +16,10 @@ function TweetByContent(props) {
 						</p>
 					</div>
 				</div>
-				<p className="tweet__text">{tw.text}</p>
+				<div className="tweet__body">
+					<p>{tw.full_text}</p>
+					<div>{getMediaEl(tw)}</div>
+				</div>
 				<div className="tweet__stats">
 					<p className="tweet__stats-likes"> ❤️ {tw.favorite_count}</p>
 					<div className="tweet__stats-retweet">
