@@ -1,3 +1,19 @@
+.randomTweet__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 4rem 4rem 6rem 4rem;
+}
+
+.randomTweet__container h4 {
+	background-color: rgb(86, 196, 255);
+	font-style: italic;
+	font-weight: 300;
+	padding: 1rem;
+	border-radius: 10px;
+	margin-left: 3rem;
+}
+
 .images-container {
 	margin: 2rem 0;
 	display: grid;
@@ -6,6 +22,18 @@
 	justify-content: center;
 	justify-items: center;
 	align-items: end;
+}
+@media only screen and (max-width: 600px) {
+	.randomTweet__header {
+		flex-direction: column;
+		margin: 1rem 0;
+	}
+	.randomTweet__header h4 {
+		margin: 0.5rem 0;
+	}
+	/* .search__icon {
+		width: 6rem;
+	} */
 }
 
 .images-container img {
