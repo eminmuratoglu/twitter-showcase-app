@@ -8,33 +8,29 @@ class App extends Component {
 	state = {
 		tweetsByContent: [],
 		tweetsByUser: []
-		// searchQuery: ''
 	};
 
-	getTweetsByContent = async (url) => {
+	getTweetsByContent = async (url, callbackForNoResult) => {
 		const response = await axios.get(url);
 		this.setState({ tweetsByContent: response.data, tweetsByUser: [] });
+		callbackForNoResult();
 	};
 
-	getTweetsByUser = async (url) => {
+	getTweetsByUser = async (url, callbackForNoResult) => {
 		const response = await axios.get(url);
 		this.setState({ tweetsByUser: response.data, tweetsByContent: [] });
+		callbackForNoResult();
 	};
-
-	// getSearchQuery = (inputText) => {
-	// 	this.setState({ searchQuery: inputText });
-	// };
 
 	render() {
 		return (
 			<div className="App">
 				<NavBar />
 				<div className="content__container">
-					<h1 className="display-3">Twitter Showcase App</h1>
+					<h1 className="display-3">Hunt 🏹 Tweets</h1>
 					<Routes
 						tweetsByContent={this.state.tweetsByContent}
 						tweetsByUser={this.state.tweetsByUser}
-						getSearchQuery={this.getSearchQuery}
 						getTweetsByContent={this.getTweetsByContent}
 						getTweetsByUser={this.getTweetsByUser}
 					/>

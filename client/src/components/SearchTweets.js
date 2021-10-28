@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LoadingSpinner from './LoadingSpinner';
 import './SearchTweet.css';
 import searchPicturePng from './images/search-picture.png';
 import TweetByContent from './TweetByContent';
@@ -6,43 +7,40 @@ import TweetByUser from './TweetByUser';
 
 class SearchTweets extends Component {
 	state = {
-		searchQuery: ''
+		searchQuery: '',
+		isLoading: false,
+		isNoResult: ''
 	};
 
 	handleChange = (e) => {
-		this.setState({ searchQuery: e.target.value }, () => {
-			// this.props.getSearchQuery(this.state.searchQuery);
-		});
+		this.setState({ searchQuery: e.target.value });
 	};
+
+	isNoResult = (tweets) => {
+		!tweets.length > 0 ? this.setState({ isNoResult: true }) : this.setState({ isNoResult: false });
+	};
+
+	//try refactoring these two functions
 
 	handleSearchByContent = (e) => {
 		e.preventDefault();
-		this.props.getTweetsByContent(`api/tweets/content/?searchQuery=${this.state.searchQuery}`);
+		this.setState({ isLoading: true });
+		this.props.getTweetsByContent(`api/tweets/content/?searchQuery=${this.state.searchQuery}`, () => {
+			this.isNoResult(this.props.tweetsByContent);
+			this.setState({ isLoading: false });
+		});
 	};
 
 	handleSearchByUser = (e) => {
 		e.preventDefault();
-		this.props.getTweetsByUser(`api/tweets/user/?searchQuery=${this.state.searchQuery}`);
+		this.setState({ isLoading: true });
+		this.props.getTweetsByUser(`api/tweets/user/?searchQuery=${this.state.searchQuery}`, () => {
+			this.isNoResult(this.props.tweetsByUser);
+			this.setState({ isLoading: false });
+		});
 	};
 
 	render() {
-		// let renderTweetsByUser, renderTweetsByContent;
-		// const notFoundMsg = <h5>Search result not found! Please try another!</h5>;
-		// if (this.props.tweetsByUser.length > 0) {
-		// 	renderTweetsByUser = this.props.tweetsByUser.map((tw) => {
-		// 		return <TweetByUser key={tw.id} tweets={tw} />;
-		// 	});
-		// } else {
-		// 	renderTweetsByUser = notFoundMsg;
-		// }
-		// if (this.props.tweetsByContent.length > 0) {
-		// 	renderTweetsByContent = this.props.tweetsByContent.map((tw) => {
-		// 		return <TweetByContent key={tw.id} tweets={tw} />;
-		// 	});
-		// } else {
-		// 	renderTweetsByContent = notFoundMsg;
-		// }
-
 		let renderTweetsByUser = this.props.tweetsByUser.map((tw) => {
 			return <TweetByUser key={tw.id} tweets={tw} />;
 		});
@@ -69,22 +67,30 @@ class SearchTweets extends Component {
 					<button
 						className="btn btn-primary my-2 my-sm-0"
 						type="submit"
-						onClick={this.handleSearchByUser}
-						style={{ whiteSpace: 'nowrap' }}
-					>
-						Search By User
-					</button>
-					<button
-						className="btn btn-primary my-2 my-sm-0"
-						type="submit"
 						onClick={this.handleSearchByContent}
 						style={{ whiteSpace: 'nowrap' }}
 					>
 						Search By Content
 					</button>
+					<button
+						className="btn btn-primary my-2 my-sm-0"
+						type="submit"
+						onClick={this.handleSearchByUser}
+						style={{ whiteSpace: 'nowrap' }}
+					>
+						Search By User
+					</button>
 				</form>
-				{renderTweetsByContent}
-				{renderTweetsByUser}
+				{!this.state.isLoading && this.state.isNoResult && <h5>No result!</h5>}
+
+				{this.state.isLoading ? (
+					<LoadingSpinner />
+				) : (
+					[
+						this.state.isNoResult !== true && renderTweetsByContent,
+						this.state.isNoResult !== true && renderTweetsByUser
+					]
+				)}
 			</div>
 		);
 	}
