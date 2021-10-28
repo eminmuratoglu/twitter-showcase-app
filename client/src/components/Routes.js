@@ -13,7 +13,6 @@ function Routes(props) {
 					<SearchTweets
 						tweetsByContent={props.tweetsByContent}
 						tweetsByUser={props.tweetsByUser}
-						getSearchQuery={props.getSearchQuery}
 						getTweetsByContent={props.getTweetsByContent}
 						getTweetsByUser={props.getTweetsByUser}
 					/>
