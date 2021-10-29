@@ -27,7 +27,6 @@ class App extends Component {
 			<div className="App">
 				<NavBar />
 				<div className="content__container">
-					<h1 className="display-3">Hunt 🏹 Tweets</h1>
 					<Routes
 						tweetsByContent={this.state.tweetsByContent}
 						tweetsByUser={this.state.tweetsByUser}
