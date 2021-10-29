@@ -1,27 +1,25 @@
 import React, { Component } from 'react';
 import './RandomTweet.css';
 import axios from 'axios';
-// import Modal from 'react-modal';
 import Modal from './Modal';
+import TweetByUser from './TweetByUser';
+import Feature from './Features';
+import { getRandomTweet } from './helpers';
 import huntingImg from './images/hunting.png';
 import chesscomImg from './images/chess.com.png';
 import javascriptImg from './images/javascript.png';
 import nbaImg from './images/nba.png';
 import reactImg from './images/react.png';
 import uclImg from './images/ucl.png';
-import TweetByUser from './TweetByUser';
 
 class RandomTweets extends Component {
 	state = {
 		tweet: ''
 	};
-	getRandom = (tweetsArray) => {
-		return tweetsArray[Math.floor(Math.random() * tweetsArray.length)];
-	};
 
 	setAndShowTweet = async (e) => {
 		const resp = await axios.get(`api/tweets/user/?searchQuery=${e.target.name}`);
-		let randomTweet = this.getRandom(resp.data);
+		const randomTweet = getRandomTweet(resp.data);
 		this.setState({ tweet: randomTweet });
 	};
 
@@ -29,10 +27,14 @@ class RandomTweets extends Component {
 		return (
 			<div className="randomTweet__container">
 				<div className="randomTweet__header">
-					<img src={huntingImg} style={{ width: '12rem' }} alt="target" />
+					<img src={huntingImg} className="randomTweet__header-icon" alt="target" />
 					<div>
-						<h4>Click on one of my favorite Twitter topics below</h4>
-						<h4>And "catch" a random tweet!</h4>
+						<div className="feature-1">
+							<Feature>Click on one of my favorites below</Feature>
+						</div>
+						<div className="feature-2">
+							<Feature>And "catch" a random tweet!</Feature>
+						</div>
 					</div>
 				</div>
 				<div className="images-container">
@@ -49,7 +51,6 @@ class RandomTweets extends Component {
 						onClick={this.setAndShowTweet}
 						data-bs-toggle="modal"
 						data-bs-target=".modal"
-						className="chess-pic"
 						src={chesscomImg}
 						alt="chess.com"
 					/>
