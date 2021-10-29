@@ -3,7 +3,6 @@ const path = require('path');
 require('dotenv').config();
 const app = express();
 const axios = require('axios');
-// const bodyParser = require('body-parser'); // to be deleted
 
 const port = 3000;
 
