@@ -9,42 +9,31 @@ const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, 'client/build')));
 
+const getResponse = async (url) => {
+	const response = await axios.get(url, {
+		headers: {
+			'Content-Type': 'application/json',
+			Accept: 'application/json',
+			Authorization: process.env.TWITTER_AUTH_BEARER_TOKEN
+		}
+	});
+	return response;
+};
+
 app.get('/api/tweets/content', async (req, res) => {
-	try {
-		let { searchQuery } = req.query;
-		let response = await axios.get(
-			`https://api.twitter.com/1.1/search/tweets.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=10`,
-			{
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-					Authorization: process.env.TWITTER_AUTH_BEARER_TOKEN
-				}
-			}
-		);
-		res.send(response.data.statuses);
-	} catch (err) {
-		console.log(err);
-	}
+	const { searchQuery } = req.query;
+	const response = await getResponse(
+		`https://api.twitter.com/1.1/search/tweets.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=10`
+	);
+	res.send(response.data.statuses);
 });
 
 app.get('/api/tweets/user', async (req, res) => {
-	try {
-		const { searchQuery } = req.query;
-		const response = await axios.get(
-			`https://api.twitter.com/1.1/users/search.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=10`,
-			{
-				headers: {
-					'Content-Type': 'application/json',
-					Accept: 'application/json',
-					Authorization: process.env.TWITTER_AUTH_BEARER_TOKEN
-				}
-			}
-		);
-		res.send(response.data);
-	} catch (err) {
-		console.log(err);
-	}
+	const { searchQuery } = req.query;
+	const response = await getResponse(
+		`https://api.twitter.com/1.1/users/search.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=10`
+	);
+	res.send(response.data);
 });
 
 app.listen(port);
