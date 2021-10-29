@@ -8,6 +8,8 @@
 	padding: 0.5rem;
 }
 
-.content__container .display-3 {
-	font-family: 'Acme', sans-serif;
+@media screen and (max-width: 600px) {
+	.content__container {
+		padding-top: 0;
+	}
 }
