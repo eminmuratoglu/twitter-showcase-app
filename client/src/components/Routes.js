@@ -1,11 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Home from './Home';
 import SearchTweets from './SearchTweets';
 import RandomTweets from './RandomTweets';
 
 function Routes(props) {
 	return (
 		<Switch>
+			<Route exact path="/" render={() => <Home />} />
 			<Route
 				exact
 				path="/searchtweets"
