@@ -17,3 +17,7 @@ export function getMediaEl(tw) {
 export function formatDate(date) {
 	return `${date.split(' ').slice(1, 3).join(' ')} ${date.slice(-4)}`;
 }
+
+export function getRandomTweet(tweetsArray) {
+	return tweetsArray[Math.floor(Math.random() * tweetsArray.length)];
+}
