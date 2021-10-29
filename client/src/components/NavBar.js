@@ -5,7 +5,7 @@ class NavBar extends Component {
 	render() {
 		return (
 			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-				<div className="navbar-brand">H | T</div>
+				<div className="navbar-brand mx-3">H | T</div>
 				<button
 					className="navbar-toggler"
 					type="button"
