@@ -1,0 +1,60 @@
+.feature {
+	background-color: rgb(70, 190, 255);
+	font-style: italic;
+	font-weight: 300;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+.feature-1 {
+	animation: moveInLeft 1s;
+}
+.feature-2 {
+	animation: moveInBottom 1s;
+}
+.feature-3 {
+	animation: moveInRight 1s;
+}
+
+@media only screen and (max-width: 600px) {
+	.feature {
+		padding: 0.5rem;
+	}
+}
+
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+	80% {
+		transform: translateX(1.5rem);
+	}
+	100% {
+		opacity: 100%;
+		transform: translateX(0);
+	}
+}
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10);
+	}
+	80% {
+		transform: translateX(-1.5rem);
+	}
+	100% {
+		opacity: 100%;
+		transform: translateX(0);
+	}
+}
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(-10rem);
+	}
+	100% {
+		opacity: 100%;
+		transform: translateY(0);
+	}
+}
