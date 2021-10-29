@@ -1,0 +1,72 @@
+.searchtweet__container {
+	margin: 0 auto;
+	max-width: 55rem;
+}
+.searchTweet__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 3rem 2rem;
+	gap: 2rem;
+}
+
+.search__icon {
+	width: 8rem;
+}
+
+.form-group,
+.form-group .btns-container {
+	display: flex;
+	gap: 0.3rem;
+}
+.btns-container button {
+	white-space: nowrap;
+}
+.form-group {
+	margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+	.searchTweet__header {
+		flex-direction: column;
+		gap: 0;
+		margin: 0.7rem 0;
+	}
+	.searchTweet__header h4 {
+		margin: 0.5rem 0;
+	}
+	.search__icon {
+		width: 6rem;
+	}
+	.form-group {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+	80% {
+		transform: translateX(1.5rem);
+	}
+	100% {
+		opacity: 100%;
+		transform: translateX(0);
+	}
+}
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10);
+	}
+	80% {
+		transform: translateX(-1.5rem);
+	}
+	100% {
+		opacity: 100%;
+		transform: translateX(0);
+	}
+}
