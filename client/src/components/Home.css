@@ -1,0 +1,41 @@
+.homepage-heading {
+	margin: 2rem 0;
+	font-family: 'Acme', sans-serif;
+	font-size: 5rem;
+	color: rgb(70, 190, 255);
+}
+
+.homepage-body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1.5rem 0;
+	gap: 2rem;
+}
+.homepage-img {
+	width: 30rem;
+}
+.linkBtns-container {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+	.homepage-heading {
+		font-size: 3.5rem;
+		margin: 0.5rem 0;
+	}
+	.homepage-body {
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+	}
+	.homepage-img {
+		width: 20rem;
+	}
+	.linkBtns-container {
+		gap: 0.5rem;
+	}
+}
