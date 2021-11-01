@@ -4,9 +4,7 @@ require('dotenv').config();
 const app = express();
 const axios = require('axios');
 
-const port = process.env.PORT || 3000;
-
-app.use(express.static(path.join(__dirname, '/client/build')));
+app.use('/', express.static(path.join(__dirname, '/client/build')));
 
 const getResponse = async (url) => {
 	const response = await axios.get(url, {
@@ -39,4 +37,4 @@ app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
 });
 
-app.listen(port);
+app.listen(process.env.PORT || 3000);

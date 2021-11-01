@@ -1648,7 +1648,8 @@ function getMediaEl(tw) {
     if (media.type === 'photo') {
       return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("img", {
         src: media.media_url,
-        width: "300"
+        width: "300",
+        alt: "media"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 5,
