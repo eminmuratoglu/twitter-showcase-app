@@ -22,7 +22,7 @@ const getResponse = async (url) => {
 app.get('/api/tweets/content', async (req, res) => {
 	const { searchQuery } = req.query;
 	const response = await getResponse(
-		`https://api.twitter.com/1.1/search/tweets.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=10`
+		`https://api.twitter.com/1.1/search/tweets.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=15`
 	);
 	res.send(response.data.statuses);
 });
@@ -30,7 +30,7 @@ app.get('/api/tweets/content', async (req, res) => {
 app.get('/api/tweets/user', async (req, res) => {
 	const { searchQuery } = req.query;
 	const response = await getResponse(
-		`https://api.twitter.com/1.1/users/search.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=10`
+		`https://api.twitter.com/1.1/users/search.json?tweet_mode=extended&q=${searchQuery}&result_type=popular&lang=en&count=15`
 	);
 	res.send(response.data);
 });
