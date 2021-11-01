@@ -6,6 +6,7 @@
     "runtime-main.js.map": "/js/bundle.js.map",
     "vendors~main.js": "/js/vendors~main.chunk.js",
     "vendors~main.js.map": "/js/vendors~main.chunk.js.map",
+    "index.html": "/index.html",
     "media/chess.com.png": "/media/chess.com.5a7a080e.png",
     "media/hunting.png": "/media/hunting.5357da1b.png",
     "media/nba.png": "/media/nba.e29ff7b0.png",

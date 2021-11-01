@@ -6,6 +6,7 @@
 	gap: 2rem;
 }
 .randomTweet__header-icon {
+	opacity: 85%;
 	width: 16rem;
 }
 
