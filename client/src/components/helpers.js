@@ -2,7 +2,7 @@ export function getMediaEl(tw) {
 	if (tw.extended_entities) {
 		let media = tw.extended_entities.media[0];
 		if (media.type === 'photo') {
-			return <img src={media.media_url} width="300" />;
+			return <img src={media.media_url} width="300" alt="media" />;
 		} else if (media.type === 'video') {
 			function filterAndGetSmallestMp4() {
 				return media.video_info.variants
