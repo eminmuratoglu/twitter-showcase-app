@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Tweet.css';
 import retweetIcon from './images/retweet.png';
 import { getMediaEl, formatDate } from './helpers';
