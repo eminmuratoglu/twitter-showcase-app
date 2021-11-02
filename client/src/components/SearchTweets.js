@@ -76,7 +76,7 @@ class SearchTweets extends Component {
 						</button>
 					</div>
 				</form>
-				{!this.state.isLoading && this.state.isNoResult && <h5 className="noResultMsg">No result!</h5>}
+				{!this.state.isLoading && this.state.isNoResult && <h5>No result!</h5>}
 
 				{this.state.isLoading ? (
 					<LoadingSpinner />

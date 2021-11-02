@@ -37,7 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".feature {\n\tbackground-color: rgb(70, 190, 255);\n\tfont-style: italic;\n\tfont-weight: 300;\n\tpadding: 1rem;\n\tborder-radius: 10px;\n}\n\n.feature-1 {\n\tanimation: moveInLeft 1s;\n}\n.feature-2 {\n\tanimation: moveInBottom 1s;\n}\n.feature-3 {\n\tanimation: moveInRight 1s;\n}\n\n@media only screen and (max-width: 600px) {\n\t.feature {\n\t\tpadding: 0.5rem;\n\t}\n}\n\n@keyframes moveInLeft {\n\t0% {\n\t\topacity: 0;\n\t\ttransform: translateX(-10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(1.5rem);\n\t}\n\t100% {\n\t\topacity: 100%;\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInRight {\n\t0% {\n\t\topacity: 0;\n\t\ttransform: translateX(10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(-1.5rem);\n\t}\n\t100% {\n\t\topacity: 100%;\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInBottom {\n\t0% {\n\t\topacity: 0;\n\t\ttransform: translateY(-10rem);\n\t}\n\t100% {\n\t\topacity: 100%;\n\t\ttransform: translateY(0);\n\t}\n}\n", "",{"version":3,"sources":["webpack://src/components/Features.css"],"names":[],"mappings":"AAAA;CACC,mCAAmC;CACnC,kBAAkB;CAClB,gBAAgB;CAChB,aAAa;CACb,mBAAmB;AACpB;;AAEA;CACC,wBAAwB;AACzB;AACA;CACC,0BAA0B;AAC3B;AACA;CACC,yBAAyB;AAC1B;;AAEA;CACC;EACC,eAAe;CAChB;AACD;;AAEA;CACC;EACC,UAAU;EACV,6BAA6B;CAC9B;CACA;EACC,6BAA6B;CAC9B;CACA;EACC,aAAa;EACb,wBAAwB;CACzB;AACD;AACA;CACC;EACC,UAAU;EACV,4BAA4B;CAC7B;CACA;EACC,8BAA8B;CAC/B;CACA;EACC,aAAa;EACb,wBAAwB;CACzB;AACD;AACA;CACC;EACC,UAAU;EACV,6BAA6B;CAC9B;CACA;EACC,aAAa;EACb,wBAAwB;CACzB;AACD","sourcesContent":[".feature {\n\tbackground-color: rgb(70, 190, 255);\n\tfont-style: italic;\n\tfont-weight: 300;\n\tpadding: 1rem;\n\tborder-radius: 10px;\n}\n\n.feature-1 {\n\tanimation: moveInLeft 1s;\n}\n.feature-2 {\n\tanimation: moveInBottom 1s;\n}\n.feature-3 {\n\tanimation: moveInRight 1s;\n}\n\n@media only screen and (max-width: 600px) {\n\t.feature {\n\t\tpadding: 0.5rem;\n\t}\n}\n\n@keyframes moveInLeft {\n\t0% {\n\t\topacity: 0;\n\t\ttransform: translateX(-10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(1.5rem);\n\t}\n\t100% {\n\t\topacity: 100%;\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInRight {\n\t0% {\n\t\topacity: 0;\n\t\ttransform: translateX(10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(-1.5rem);\n\t}\n\t100% {\n\t\topacity: 100%;\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInBottom {\n\t0% {\n\t\topacity: 0;\n\t\ttransform: translateY(-10rem);\n\t}\n\t100% {\n\t\topacity: 100%;\n\t\ttransform: translateY(0);\n\t}\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.i, ".feature {\n\tbackground-color: rgb(70, 190, 255);\n\tfont-style: italic;\n\tfont-weight: 300;\n\tpadding: 1rem;\n\tborder-radius: 10px;\n}\n\n.feature-1 {\n\tanimation: moveInLeft 1s;\n}\n.feature-2 {\n\tanimation: moveInBottom 1s;\n}\n.feature-3 {\n\tanimation: moveInRight 1s;\n}\n\n@media only screen and (max-width: 600px) {\n\t.feature {\n\t\tpadding: 0.5rem;\n\t}\n}\n\n@keyframes moveInLeft {\n\t0% {\n\t\ttransform: translateX(-10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(1.5rem);\n\t}\n\t100% {\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInRight {\n\t0% {\n\t\ttransform: translateX(10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(-1.5rem);\n\t}\n\t100% {\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInBottom {\n\t0% {\n\t\ttransform: translateY(-10rem);\n\t}\n\t100% {\n\t\ttransform: translateY(0);\n\t}\n}\n", "",{"version":3,"sources":["webpack://src/components/Features.css"],"names":[],"mappings":"AAAA;CACC,mCAAmC;CACnC,kBAAkB;CAClB,gBAAgB;CAChB,aAAa;CACb,mBAAmB;AACpB;;AAEA;CACC,wBAAwB;AACzB;AACA;CACC,0BAA0B;AAC3B;AACA;CACC,yBAAyB;AAC1B;;AAEA;CACC;EACC,eAAe;CAChB;AACD;;AAEA;CACC;EACC,6BAA6B;CAC9B;CACA;EACC,6BAA6B;CAC9B;CACA;EACC,wBAAwB;CACzB;AACD;AACA;CACC;EACC,4BAA4B;CAC7B;CACA;EACC,8BAA8B;CAC/B;CACA;EACC,wBAAwB;CACzB;AACD;AACA;CACC;EACC,6BAA6B;CAC9B;CACA;EACC,wBAAwB;CACzB;AACD","sourcesContent":[".feature {\n\tbackground-color: rgb(70, 190, 255);\n\tfont-style: italic;\n\tfont-weight: 300;\n\tpadding: 1rem;\n\tborder-radius: 10px;\n}\n\n.feature-1 {\n\tanimation: moveInLeft 1s;\n}\n.feature-2 {\n\tanimation: moveInBottom 1s;\n}\n.feature-3 {\n\tanimation: moveInRight 1s;\n}\n\n@media only screen and (max-width: 600px) {\n\t.feature {\n\t\tpadding: 0.5rem;\n\t}\n}\n\n@keyframes moveInLeft {\n\t0% {\n\t\ttransform: translateX(-10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(1.5rem);\n\t}\n\t100% {\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInRight {\n\t0% {\n\t\ttransform: translateX(10rem);\n\t}\n\t80% {\n\t\ttransform: translateX(-1.5rem);\n\t}\n\t100% {\n\t\ttransform: translateX(0);\n\t}\n}\n@keyframes moveInBottom {\n\t0% {\n\t\ttransform: translateY(-10rem);\n\t}\n\t100% {\n\t\ttransform: translateY(0);\n\t}\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -644,107 +644,104 @@ var _jsxFileName = "/Users/eminm/Desktop/my exercises/JS/portfolio/twitter-showc
 
 
 
-class NavBar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("nav", {
-      className: "navbar navbar-expand-lg navbar-dark bg-dark",
-      children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
-        className: "navbar-brand mx-3",
-        children: "H | T"
+function NavBar() {
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("nav", {
+    className: "navbar navbar-expand-lg navbar-dark bg-dark",
+    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
+      className: "navbar-brand mx-3",
+      children: "H | T"
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 4
+    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("button", {
+      className: "navbar-toggler",
+      type: "button",
+      "data-toggle": "collapse",
+      "data-target": "#navbarNav",
+      "aria-controls": "navbarNav",
+      "aria-expanded": "false",
+      "aria-label": "Toggle navigation",
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("span", {
+        className: "navbar-toggler-icon"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 8,
+        lineNumber: 17,
         columnNumber: 5
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("button", {
-        className: "navbar-toggler",
-        type: "button",
-        "data-toggle": "collapse",
-        "data-target": "#navbarNav",
-        "aria-controls": "navbarNav",
-        "aria-expanded": "false",
-        "aria-label": "Toggle navigation",
-        children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("span", {
-          className: "navbar-toggler-icon"
-        }, void 0, false, {
-          fileName: _jsxFileName,
-          lineNumber: 18,
-          columnNumber: 6
-        }, this)
-      }, void 0, false, {
-        fileName: _jsxFileName,
-        lineNumber: 9,
-        columnNumber: 5
-      }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
-        className: "collapse navbar-collapse",
-        id: "navbarNav",
-        children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("ul", {
-          className: "navbar-nav",
-          children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("li", {
-            className: "nav-item",
-            children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-              exact: true,
-              to: "/",
-              className: "nav-link",
-              children: "Home"
-            }, void 0, false, {
-              fileName: _jsxFileName,
-              lineNumber: 23,
-              columnNumber: 8
-            }, this)
+      }, this)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 4
+    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("div", {
+      className: "collapse navbar-collapse",
+      id: "navbarNav",
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("ul", {
+        className: "navbar-nav",
+        children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("li", {
+          className: "nav-item",
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+            exact: true,
+            to: "/",
+            className: "nav-link",
+            children: "Home"
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 22,
             columnNumber: 7
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("li", {
-            className: "nav-item",
-            children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-              exact: true,
-              to: "/searchtweets",
-              className: "nav-link",
-              children: "Search Tweets"
-            }, void 0, false, {
-              fileName: _jsxFileName,
-              lineNumber: 28,
-              columnNumber: 8
-            }, this)
+          }, this)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 21,
+          columnNumber: 6
+        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("li", {
+          className: "nav-item",
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+            exact: true,
+            to: "/searchtweets",
+            className: "nav-link",
+            children: "Search Tweets"
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 27,
             columnNumber: 7
-          }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("li", {
-            className: "nav-item",
-            children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-              exact: true,
-              to: "/randomtweets",
-              className: "nav-link",
-              children: "Random Tweets"
-            }, void 0, false, {
-              fileName: _jsxFileName,
-              lineNumber: 33,
-              columnNumber: 8
-            }, this)
+          }, this)
+        }, void 0, false, {
+          fileName: _jsxFileName,
+          lineNumber: 26,
+          columnNumber: 6
+        }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])("li", {
+          className: "nav-item",
+          children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__["jsxDEV"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+            exact: true,
+            to: "/randomtweets",
+            className: "nav-link",
+            children: "Random Tweets"
           }, void 0, false, {
             fileName: _jsxFileName,
             lineNumber: 32,
             columnNumber: 7
-          }, this)]
-        }, void 0, true, {
+          }, this)
+        }, void 0, false, {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 31,
           columnNumber: 6
-        }, this)
-      }, void 0, false, {
+        }, this)]
+      }, void 0, true, {
         fileName: _jsxFileName,
         lineNumber: 20,
         columnNumber: 5
-      }, this)]
-    }, void 0, true, {
+      }, this)
+    }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 19,
       columnNumber: 4
-    }, this);
-  }
-
+    }, this)]
+  }, void 0, true, {
+    fileName: _jsxFileName,
+    lineNumber: 6,
+    columnNumber: 3
+  }, this);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -1281,7 +1278,6 @@ class SearchTweets extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         lineNumber: 62,
         columnNumber: 5
       }, this), !this.state.isLoading && this.state.isNoResult && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_7__["jsxDEV"])("h5", {
-        className: "noResultMsg",
         children: "No result!"
       }, void 0, false, {
         fileName: _jsxFileName,
