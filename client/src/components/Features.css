@@ -2,7 +2,7 @@
 	background-color: rgb(70, 190, 255);
 	font-style: italic;
 	font-weight: 300;
-	padding: 0.5rem;
+	padding: 1rem;
 	border-radius: 10px;
 }
 
@@ -14,6 +14,12 @@
 }
 .feature-3 {
 	animation: moveInRight 1s;
+}
+
+@media only screen and (max-width: 600px) {
+	.feature {
+		padding: 0.5rem;
+	}
 }
 
 @keyframes moveInLeft {
