@@ -6,15 +6,14 @@
     "runtime-main.js.map": "/js/bundle.js.map",
     "vendors~main.js": "/js/vendors~main.chunk.js",
     "vendors~main.js.map": "/js/vendors~main.chunk.js.map",
-    "index.html": "/index.html",
-    "media/chess.com.png": "/media/chess.com.5a7a080e.png",
-    "media/hunting.png": "/media/hunting.5357da1b.png",
-    "media/nba.png": "/media/nba.e29ff7b0.png",
-    "media/react.png": "/media/react.4526cfee.png",
-    "media/retweet.png": "/media/retweet.fb0a1cbc.png",
+    "media/chess.com.png": "/media/chess.com.657116c6.png",
+    "media/hunting.png": "/media/hunting.b94ed3d0.png",
+    "media/javascript.png": "/media/javascript.dc486304.png",
+    "media/nba.png": "/media/nba.7afc0333.png",
+    "media/react.png": "/media/react.77858e62.png",
     "media/search-picture.png": "/media/search-picture.de739c87.png",
-    "media/twitter-bird.png": "/media/twitter-bird.b9051d09.png",
-    "media/ucl.png": "/media/ucl.6a53767d.png"
+    "media/twitter-bird.png": "/media/twitter-bird.61327e1f.png",
+    "media/ucl.png": "/media/ucl.180ca924.png"
   },
   "entrypoints": [
     "js/bundle.js",

@@ -4,8 +4,6 @@ require('dotenv').config();
 const app = express();
 const axios = require('axios');
 
-app.use('/', express.static(path.join(__dirname, '/client/build')));
-
 const getResponse = async (url) => {
 	const response = await axios.get(url, {
 		headers: {
@@ -32,6 +30,8 @@ app.get('/api/tweets/user', async (req, res) => {
 	);
 	res.send(response.data);
 });
+
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
