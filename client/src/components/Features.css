@@ -15,11 +15,6 @@
 .feature-3 {
 	animation: moveInRight 1s;
 }
-/* .feature-1,
-.feature-2,
-.feature-3 {
-	animation: moveInBottom 1s;
-} */
 
 @media only screen and (max-width: 600px) {
 	.feature {
@@ -29,25 +24,37 @@
 
 @keyframes moveInLeft {
 	0% {
+		opacity: 0;
 		transform: translateX(-10rem);
 	}
+	80% {
+		transform: translateX(1.5rem);
+	}
 	100% {
+		opacity: 100%;
 		transform: translateX(0);
 	}
 }
 @keyframes moveInRight {
 	0% {
+		opacity: 0;
 		transform: translateX(10rem);
 	}
+	80% {
+		transform: translateX(-1.5rem);
+	}
 	100% {
+		opacity: 100%;
 		transform: translateX(0);
 	}
 }
 @keyframes moveInBottom {
 	0% {
+		opacity: 0;
 		transform: translateY(-10rem);
 	}
 	100% {
+		opacity: 100%;
 		transform: translateY(0);
 	}
 }
