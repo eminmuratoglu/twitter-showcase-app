@@ -6,7 +6,7 @@
 	border-radius: 10px;
 }
 
-/* .feature-1 {
+.feature-1 {
 	animation: moveInLeft 1s;
 }
 .feature-2 {
@@ -14,12 +14,12 @@
 }
 .feature-3 {
 	animation: moveInRight 1s;
-} */
-.feature-1,
+}
+/* .feature-1,
 .feature-2,
 .feature-3 {
 	animation: moveInBottom 1s;
-}
+} */
 
 @media only screen and (max-width: 600px) {
 	.feature {

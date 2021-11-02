@@ -44,7 +44,7 @@
 	}
 }
 
-@keyframes moveInLeft {
+/* @keyframes moveInLeft {
 	0% {
 		opacity: 0;
 		transform: translateX(-10rem);
@@ -69,4 +69,4 @@
 		opacity: 100%;
 		transform: translateX(0);
 	}
-}
+} */
