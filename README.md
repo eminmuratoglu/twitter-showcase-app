@@ -25,5 +25,5 @@ topics  * Have 5 of my favorite users on twitter and when prompted, randomly cho
   * The retweet count
   * The “hearted” (favorited) count
 
-Author: Emin Muratoglu, Software Developer <br />
+Author: Emin Muratoglu, Full Stack Software Developer <br />
 [Linkedin](https://linkedin.com/in/emin-muratoglu-ba287516b)
