@@ -16,7 +16,8 @@ Technologies used: HTML, CSS, JS, Node, Express, React, Bootstrap
   * If a user searches for a twitter user/content that doesn’t exist, they will be notified with a no result message
   * The search results that are displayed looks “twitter-like”. 
 * Random tweet showcase page
-topics  * Have 5 of my favorite users on twitter and when prompted, randomly chooses a tweet from any of those five users and displays it
+topics  
+  * Have 5 of my favorite users on twitter and when prompted, randomly chooses a tweet from any of those five users and displays it
 * Any tweet that is displayed in the application includes:
   * The full text of the tweet
   * The username of the twitter user who authored the tweet
