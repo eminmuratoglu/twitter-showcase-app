@@ -4,7 +4,7 @@ A full stack, fully responsive application which retrieves data from Twitter API
 
 Technologies used: HTML, CSS, JS, Node, Express, React, Bootstrap
 
-[See live render](https://twitter-showcase-app-hif9.onrender.com/)
+<!-- [See live render](https://twitter-showcase-app-hif9.onrender.com/) -->
 
 ### App preview
 
