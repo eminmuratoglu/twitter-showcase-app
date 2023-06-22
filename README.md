@@ -8,8 +8,11 @@ Technologies used: HTML, CSS, JS, Node, Express, React, Bootstrap
 
 ### App preview
 
-![Alt text](client/src/components/images/app-preview.jpg "App preview image")
+<!-- ![Alt text](client/src/components/images/app-preview.jpg "App preview image") -->
 
+![Screenshot 2023-06-22 at 10 38 29 PM](https://github.com/eminmuratoglu/twitter-showcase-app/assets/41494657/20d42b3f-c4aa-4b4f-9f95-b2c027a0caae)
+
+![Screenshot 2023-06-22 at 10 38 47 PM](https://github.com/eminmuratoglu/twitter-showcase-app/assets/41494657/2e04b0ef-19fe-4652-bcca-d676d0c3e3b8)
 
 * Search Page </br> 
   * Allows user to search for a twitter username or by tweet content
